@@ -1,1 +1,0 @@
-# offline_first_modifield_app
