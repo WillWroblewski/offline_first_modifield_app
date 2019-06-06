@@ -3,13 +3,9 @@ import api from "../../services/api";
 
 import * as RepositoryActions from "../repositories/actions";
 
-export default function* addRepository({ repositoryName }) {
+export default function* addRepository(action) {  
 
-  alert(repositoryName)
-
-  const response = yield call(api.get, `/repos/${repositoryName}`);
-
-  alert(response)
+  const response = yield call(api.get, `/repos/${action.payload}`);  
 
   yield put(RepositoryActions.addRepositorySuccess(response.data));
 }
